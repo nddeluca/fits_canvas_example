@@ -44,6 +44,8 @@ class App extends Spine.Controller
       @residualDisplay = new FitsCanvas.Display('residual-container',500,@model.residual)
       @residualDisplay.processImage()
       @residualDisplay.draw()
+
+      @setParams()
   
   render: =>
     @html require('views/index')
@@ -53,12 +55,39 @@ class App extends Spine.Controller
       canvasOffset = $("#fits-container canvas").offset()
       @sersicParams.center.x = (e.pageX-canvasOffset.left)*@modelDisplay.scaleRatio
       @sersicParams.center.y = @model.height - (e.pageY-canvasOffset.top)*@modelDisplay.scaleRatio
-      @model.generate()
-      @modelDisplay.processImage()
-      @modelDisplay.draw()
-      @model.calculateResidual()
-      @residualDisplay.processImage()
-      @residualDisplay.draw()
+      @setParams()
+      @updateModel()
+    "click #update": (e) ->
+      @getParams()
+      @updateModel()
+      
+  setParams: ->
+    $("#centerx").val(@sersicParams.center.x)
+    $("#centery").val(@sersicParams.center.y)
+    $("#intensity").val(@sersicParams.intensity)
+    $("#effRadius").val(@sersicParams.effRadius)
+    $("#n").val(@sersicParams.n)
+    $("#coeff").val(@sersicParams.coeff)
+
+  getParams: ->
+    @sersicParams.center.x = $("#centerx").val()
+    @sersicParams.center.y = $("#centery").val()
+    @sersicParams.intensity = $("#intensity").val()
+    @sersicParams.effRadius = $("#effRadius").val()
+    @sersicParams.n = $("#n").val()
+    @sersicParams.coeff = $("#coeff").val()
+
+    
+
+  updateModel: ->
+    @model.generate()
+    @modelDisplay.processImage()
+    @modelDisplay.draw()
+    @model.calculateResidual()
+    @residualDisplay.processImage()
+    @residualDisplay.draw()
+
+
 
 module.exports = App
     
