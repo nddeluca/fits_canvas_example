@@ -9,7 +9,8 @@
     "spine/lib/route",
     "spine/lib/manager",
     "fits_canvas",
-    "fits"
+    "fits",
+    "galaxy_model"
   ],
   "libs": []
 }

@@ -1,1 +1,3 @@
-<div id="container"></div>
+<div id="fits-container"></div>
+<div id="model-container"></div>
+<div id="residual-container"></div>
