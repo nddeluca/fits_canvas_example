@@ -28,8 +28,8 @@ class App extends Spine.Controller
           y: 42
         angle: 0
         axisRatio: 1
-        effRadius: 30
-        intensity: 2.25
+        effRadius: 6
+        intensity: 2.3
         n: 1
 
       sersicFunc = GalaxyModel.models.sersic
