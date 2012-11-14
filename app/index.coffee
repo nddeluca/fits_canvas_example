@@ -26,11 +26,12 @@ class App extends Spine.Controller
         center:
           x: 31.5
           y: 42
+        angle: 0
+        axisRatio: 1
         effRadius: 30
         intensity: 2.25
         n: 1
-        coeff: 7.669
-      
+
       sersicFunc = GalaxyModel.models.sersic
       
       @model = new GalaxyModel.Model(image,sersicFunc,@sersicParams)
@@ -67,7 +68,8 @@ class App extends Spine.Controller
     $("#intensity").val(@sersicParams.intensity)
     $("#effRadius").val(@sersicParams.effRadius)
     $("#n").val(@sersicParams.n)
-    $("#coeff").val(@sersicParams.coeff)
+    $("#axisRatio").val(@sersicParams.axisRatio)
+    $("#angle").val(@sersicParams.angle)
 
   getParams: ->
     @sersicParams.center.x = $("#centerx").val()
@@ -75,10 +77,9 @@ class App extends Spine.Controller
     @sersicParams.intensity = $("#intensity").val()
     @sersicParams.effRadius = $("#effRadius").val()
     @sersicParams.n = $("#n").val()
-    @sersicParams.coeff = $("#coeff").val()
-
+    @sersicParams.axisRatio = $("#axisRatio").val()
+    @sersicParams.angle = $("#angle").val()
     
-
   updateModel: ->
     @model.generate()
     @modelDisplay.processImage()
@@ -86,8 +87,6 @@ class App extends Spine.Controller
     @model.calculateResidual()
     @residualDisplay.processImage()
     @residualDisplay.draw()
-
-
 
 module.exports = App
     

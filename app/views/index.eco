@@ -2,7 +2,7 @@
 <div id="model-container"></div>
 <div id="residual-container"></div>
 
-<div id="params" class:"clear">
+<div id="params" class="clear">
 <label>CenterX</label>
 <input id="centerx"></input>
 <label>CenterY</label>
@@ -13,11 +13,9 @@
 <input id="effRadius"></input>
 <label>N</label>
 <input id="n"></label>
-<label>Coeff</label>
-<input id="coeff"></input>
+<label>Angle</label>
+<input id="angle"></input>
+<label>Axis Ratio</label>
+<input id="axisRatio"></label>
 <button id="update">Update</button>
-
-
-
-
 </div>
