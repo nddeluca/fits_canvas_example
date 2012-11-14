@@ -61,6 +61,10 @@ class App extends Spine.Controller
     "click #update": (e) ->
       @getParams()
       @updateModel()
+
+    "input #params input": (e) ->
+      @getParams()
+      @updateModel()
       
   setParams: ->
     $("#centerx").val(@sersicParams.center.x)
