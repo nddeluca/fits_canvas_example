@@ -18,7 +18,7 @@ class App extends Spine.Controller
       fitsFile = new FITS.File(xhr.response)
       image = fitsFile.getDataUnit()
       image.getFrame()
-      fitsDisplay = new FitsCanvas.Display('fits-container',500,image)
+      fitsDisplay = new FitsCanvas.Display('fits-container',300,image)
       fitsDisplay.processImage()
       fitsDisplay.draw()
 
@@ -37,12 +37,12 @@ class App extends Spine.Controller
       @model = new GalaxyModel.Model(image,sersicFunc,@sersicParams)
       @model.generate()
 
-      @modelDisplay = new FitsCanvas.Display('model-container',500,@model)
+      @modelDisplay = new FitsCanvas.Display('model-container',300,@model)
       @modelDisplay.processImage()
       @modelDisplay.draw()
 
       @model.calculateResidual()
-      @residualDisplay = new FitsCanvas.Display('residual-container',500,@model.residual)
+      @residualDisplay = new FitsCanvas.Display('residual-container',300,@model.residual)
       @residualDisplay.processImage()
       @residualDisplay.draw()
 
