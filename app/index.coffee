@@ -1,5 +1,4 @@
 require('lib/setup')
-FITS = require('fits')
 FitsCanvas = require('fits_canvas')
 GalaxyModel = require('galaxy_model')
 Spine = require('spine')
