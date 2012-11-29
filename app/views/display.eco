@@ -1,10 +1,8 @@
-<div id="display-controller">
-  <div class="row-fluid">
-    <div id="galaxy" class="span4">
-    </div>
-    <div id="model" class="span4">
-    </div>
-    <div id="residual" class="span4">
-    </div>
+<div class="row-fluid">
+  <div id="galaxy-container" class="span4">
+  </div>
+  <div id="model-container" class="span4">
+  </div>
+  <div id="residual-container" class="span4">
   </div>
 </div>
